@@ -1,8 +1,9 @@
 import React from "react";
+import './Button.css'
 
-function Button({ value }) {
+function Button({ value, fn, index }) {
     return(
-        <button>
+        <button onClick={() => fn && fn(index)} className={"button"} >
             {value ?? 'Click'} 
         </button>
     )
