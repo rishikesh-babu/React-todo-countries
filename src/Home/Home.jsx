@@ -8,8 +8,8 @@ function Home() {
 
     return (
         <div className="home">
-            <h2>Hello hai this is home page</h2>
-            <h3>Click the button to view the page</h3>
+            <h1>Hello hai this is home page</h1>
+            <h1>Click the button to view the pages</h1>
             <div className="d-flex justify-content-center gap-1 m-5">
                 <Link to={'/countries'} >
                     <Button value={'Countries'} />
