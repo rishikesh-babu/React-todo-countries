@@ -3,10 +3,10 @@ import Input from "../../Elements/Input/Input";
 import Button from "../../Elements/Button/Button";
 import './Todoinput.css'
 
-function Todoinput({ handleAdd, handleInput, todoinput }) {
+function Todoinput({ handleAdd, handleInput, todoinput, inputref }) {
     return(
         <div className="todoinput">
-            <Input todoinput={todoinput} handleInput={handleInput} />
+            <Input ref={inputref} todoinput={todoinput} handleInput={handleInput} />
             <Button fn={handleAdd} value={'Add'} />
         </div>
     )

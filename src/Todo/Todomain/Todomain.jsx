@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import Todoinput from "../Todoinput/Todoinput";
 import Todolist from "../Todolist/Todolist";
 import './Todomain.css'
@@ -7,6 +7,7 @@ function Todomain() {
 
     const [todoinput, setTodoinput] = useState([])
     const [todolist, setTodolist] = useState([])
+    const inputref = useRef()
 
     function handleInput(event) {
         setTodoinput(event.target.value)
@@ -14,16 +15,21 @@ function Todomain() {
     function handleAdd() {
         console.log('Add')
         setTodolist([...todolist, { label: todoinput, done: false }])
-        console.log(todolist)
+        console.log(...todolist)
         setTodoinput('')
+        if (inputref.current) {
+            inputref.current.focus()
+        }
     }
     function handleDelete(index) {
+        console.log('Delete')
         const temp = [...todolist]
         temp.splice(index, 1)
         setTodolist(temp)
-        console.log(todolist)
+        console.log(...todolist)
     }
     function handleDone(index) {
+        console.log('Done')
         const temp = [...todolist]
         temp[index].done = true
         setTodolist(temp)
@@ -32,7 +38,7 @@ function Todomain() {
 
     return (
         <div className="todomain">
-            <Todoinput todoinput={todoinput} handleInput={handleInput} handleAdd={handleAdd} />
+            <Todoinput inputref={inputref} todoinput={todoinput} handleInput={handleInput} handleAdd={handleAdd} />
             <div className="todolist-container">
                 {
                     todolist.map((element, index) => <Todolist handleDone={handleDone} handleDelete={handleDelete} item={element} index={index} key={index} />)

@@ -18,7 +18,7 @@ function Cards({ data }) {
         <Card style={{ width: '18rem' }}>
             <Card.Img variant="top" src={data.flags.png} />
             <Card.Body>
-                <Card.Title> <h1>{data.capital}</h1> </Card.Title>
+                <Card.Title> <h1>{data.name.common}</h1> </Card.Title>
                 <Card.Text>
                     
                 </Card.Text>

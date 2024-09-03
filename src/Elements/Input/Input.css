@@ -1,12 +1,12 @@
-input {
+.input {
     font-size: 35px;
     border: 2px solid black;
     border-radius: 10px;
     padding: 2px;
 }
-input:hover {
+.input:hover {
     box-shadow: 0 0 14px 1px white;
 }
-input:focus {
+.input:focus {
     background-color: #38ff6d;
 }
